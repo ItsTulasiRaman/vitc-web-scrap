@@ -19,7 +19,9 @@ class JSONEncoder(json.JSONEncoder):
             return str(o)
         return json.JSONEncoder.default(self, o)
 
-
+@app.route("/")
+def connected():
+    return Response("API connected", status=200)
 
 @app.route("/vitcweb/api/fetch")
 def index():
